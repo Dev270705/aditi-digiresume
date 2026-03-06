@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aditi Sata | Digital Resume</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f4f6f8;
+color:#1f2933;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(135deg,#1f2933,#323f4b);
+color:white;
+text-align:center;
+padding:80px 20px;
+page-break-after:avoid;
+}
+
+header h1{
+font-size:40px;
+}
+
+header h2{
+margin-top:8px;
+font-weight:300;
+color:#d9e2ec;
+}
+
+.contact{
+margin-top:15px;
+font-size:14px;
+color:#bcccdc;
+}
+
+/* BUTTONS */
+
+.buttons{
+margin-top:20px;
+}
+
+.btn{
+background:#14b8a6;
+color:white;
+padding:12px 22px;
+border-radius:30px;
+border:none;
+font-size:14px;
+cursor:pointer;
+transition:0.3s;
+text-decoration:none;
+display:inline-block;
+margin:5px;
+}
+
+.btn:hover{
+transform:scale(1.05);
+background:#0d9488;
+}
+
+/* CONTAINER */
+
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+padding:60px 0;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+font-size:26px;
+margin-bottom:25px;
+border-left:5px solid #14b8a6;
+padding-left:10px;
+page-break-after:avoid;
+}
+
+/* CARD */
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.07);
+margin-bottom:20px;
+transition:0.3s;
+border:1px solid #e4e7eb;
+page-break-inside:avoid;
+break-inside:avoid;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+/* SKILLS */
+
+.skill{
+margin-bottom:15px;
+}
+
+.skill p{
+margin-bottom:6px;
+}
+
+.bar{
+background:#e4e7eb;
+height:8px;
+border-radius:5px;
+overflow:hidden;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:linear-gradient(90deg,#14b8a6,#2dd4bf);
+width:0;
+animation:load 2s forwards;
+}
+
+@keyframes load{
+to{
+width:var(--skill-level);
+}
+}
+
+/* SCROLL ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+ul{
+padding-left:20px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#1f2933;
+color:#bcccdc;
+margin-top:40px;
+page-break-before:avoid;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+header h1{
+font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Aditi Sata</h1>
+<h2>MCA Student | Aspiring Software Developer</h2>
+
+<div class="contact">
+📍 Ahmedabad, Gujarat | 📞 9426632242 | ✉️ sataaditi@gmail.com
+</div>
+
+<div class="buttons">
+
+<button class="btn" onclick="downloadResume()">Download Resume</button>
+
+<a class="btn" href="https://github.com/Aditisocute" target="_blank">GitHub</a>
+
+<a class="btn" href="https://www.linkedin.com/in/aditi-sata/" target="_blank">LinkedIn</a>
+
+</div>
+
+</header>
+
+
+<div class="container" id="resume">
+
+<div class="hidden">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+Highly motivated MCA student with strong fundamentals in software development,
+web technologies and problem solving. Passionate about building efficient
+applications and continuously learning modern technologies.
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Education</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Master of Computer Applications (MCA)</h3>
+<p>SVGU — Pursuing</p>
+</div>
+
+<div class="card">
+<h3>Bachelor's Degree</h3>
+<p>Nobel University — Completed</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="card">
+
+<div class="skill">
+<p>Python</p>
+<div class="bar"><span style="--skill-level:85%"></span></div>
+</div>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar"><span style="--skill-level:90%"></span></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar"><span style="--skill-level:80%"></span></div>
+</div>
+
+<div class="skill">
+<p>MySQL</p>
+<div class="bar"><span style="--skill-level:70%"></span></div>
+</div>
+
+<div class="skill">
+<p>C / C++</p>
+<div class="bar"><span style="--skill-level:75%"></span></div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="card">
+
+<h3>H&M Website Clone</h3>
+
+<p>
+Built a responsive e-commerce website inspired by H&M featuring
+product listings and category browsing using HTML, CSS and Python.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Internship</h2>
+
+<div class="card">
+
+<h3>Python Developer Intern (1 Month)</h3>
+
+<p>
+Worked on real-world Python development tasks and gained hands-on
+experience in application development.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Achievements</h2>
+
+<div class="card">
+
+<ul>
+<li>3 trophies from Nobel University for excellent SGPA/CGPA</li>
+<li>Part of News & Settlement Committee at SVGU</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Strengths</h2>
+
+<div class="card">
+
+<ul>
+<li>Quick Learner</li>
+<li>Problem Solving</li>
+<li>Team Player</li>
+<li>Good Communication</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="hidden">
+
+<h2 class="section-title">Personal Details</h2>
+
+<div class="card">
+
+<p><strong>Date of Birth:</strong> 04-09-2004</p>
+<p><strong>Languages:</strong> English, Hindi, Gujarati</p>
+<p><strong>Hobbies:</strong> Part-time Nail Artist</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+© 2026 Aditi Sata | Digital Resume
+</footer>
+
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach((el)=>observer.observe(el));
+
+
+function downloadResume(){
+
+const element = document.body;
+
+const opt = {
+margin:0.5,
+filename:"Aditi_Sata_Resume.pdf",
+image:{ type:"jpeg", quality:0.98 },
+html2canvas:{ scale:2 },
+jsPDF:{ unit:"in", format:"a4", orientation:"portrait" },
+pagebreak:{ mode:['avoid-all','css','legacy'] }
+};
+
+html2pdf().set(opt).from(element).save();
+
+}
+
+</script>
+
+</body>
+</html>
